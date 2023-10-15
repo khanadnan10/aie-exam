@@ -25,9 +25,18 @@ class HighestRankingList extends StatelessWidget {
     return Column(
       children: [
         Container(
-          padding: const EdgeInsets.all(10.0),
+          padding: const EdgeInsets.all(10.0).copyWith(
+            bottom: 0,
+          ),
           decoration: const BoxDecoration(
             color: AppColor.kPrimaryBlue,
+            // border: isLast == true
+            //     ? null
+            //     : const Border(
+            //         bottom: BorderSide(
+            //           color: Colors.transparent,
+            //         ),
+            //       ),
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -119,7 +128,11 @@ class HighestRankingList extends StatelessWidget {
             ],
           ),
         ),
-        isLast == true ? const Divider() : const SizedBox(),
+        // isLast == true
+        //     ? const Divider(
+        //         color: AppColor.kWhite,
+        //       )
+        //     : const SizedBox(),
       ],
     );
   }

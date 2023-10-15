@@ -24,7 +24,17 @@ class RankingList extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-          padding: const EdgeInsets.all(15.0),
+          padding: const EdgeInsets.all(15.0).copyWith(bottom: 10),
+          margin: const EdgeInsets.all(10),
+          // decoration: BoxDecoration(
+          //   border: isLast == true
+          //       ? null
+          //       : const Border(
+          //           bottom: BorderSide(
+          //             color: AppColor.kWhite,
+          //           ),
+          //         ),
+          // ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -70,7 +80,11 @@ class RankingList extends StatelessWidget {
             ],
           ),
         ),
-        isLast == true ? const Divider() : const SizedBox(),
+        isLast == true
+            ? const Divider(
+                color: AppColor.kWhite,
+              )
+            : const SizedBox.shrink(),
       ],
     );
   }
