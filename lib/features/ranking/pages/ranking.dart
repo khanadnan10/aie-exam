@@ -176,7 +176,7 @@ class Ranking extends StatelessWidget {
                         timeEffeciency: rankingData[i]['timeEfficiency'],
                         image: rankingData[i]['image'],
                         rank: rankingData[i]['rank'],
-                        isLast: i == rankingData.length - 1,
+                        isLast: i != 1 ? false : i == rankingData.length - 1,
                       )
                     else
                       RankingList(
@@ -184,7 +184,7 @@ class Ranking extends StatelessWidget {
                         image: rankingData[i]['image'],
                         name: rankingData[i]['name'],
                         percent: rankingData[i]['percent'],
-                        isLast: i != rankingData.length - 1,
+                        isLast: i == 0 ? false : i != rankingData.length - 1,
                       )
                 ],
               ),
